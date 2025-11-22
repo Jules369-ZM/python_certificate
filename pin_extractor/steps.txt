@@ -1,0 +1,74 @@
+Pin Extractor Workshop - Steps Summary
+
+Step 1: Create the basic function structure.
+- A function called pin_extractor with parameter 'poem'.
+- Add an empty return statement (pass or just close the function).
+
+Step 2: Initialize the secret code.
+- Inside the function, create a variable secret_code initialized to an empty string.
+
+Step 3: Set up debugging environment.
+- Outside the function, create a poem variable with the given multi-line string.
+- Add a function call with the poem variable as argument (later to be replaced with print for debugging).
+
+Step 4: Split the poem into lines.
+- Inside the function, split the poem into a list of lines using split('\n').
+- Assign to a variable called 'lines'.
+
+Step 5: Loop over the lines.
+- Create a loop over the lines list (initially with print(line) inside).
+
+Step 6: Split lines into words.
+- Inside the line loop, split each line into words using split().
+- Print the words list for debugging.
+
+Step 7: Use enumerate for line indices.
+- Change the loop to use enumerate(lines) to get line_index and line.
+- Update print to show line_index and line.
+
+Step 8: Extract word at line index.
+- Change print to print(words[line_index]).
+
+Step 9: Get length of the word.
+- Change to print(len(words[line_index])).
+
+Step 10: Convert length to string.
+- Change to print(str(len(words[line_index]))).
+
+Step 11: Build the secret code.
+- Replace print with secret_code += str(len(words[line_index])).
+
+Step 12: Remove debug prints and add return.
+- Remove the print(line_index, line).
+- Add return secret_code at the end.
+
+Step 13: Add print for debugging output.
+- Change the function call to print(pin_extractor(poem)).
+
+Step 14: Handle missing words.
+- Add if statement to check if line_index < len(words) before accessing words[line_index].
+- Otherwise, append '0'.
+
+Step 15: Add else for missing words.
+- Add else clause to append '0' when line_index >= len(words).
+- Update the poem to have a line with missing word for testing.
+
+Step 16: Add more poems for multi-poem extraction.
+- Add poem2 and poem3 to the global scope.
+- Comment out the print(pin_extractor(poem)).
+
+Step 17: Make the function handle multiple poems.
+- Change the parameter from 'poem' to 'poems'.
+- Add a for loop around the existing body to iterate over poems.
+- Update the print call to use [poem, poem2, poem3] and uncomment it.
+
+Step 18: Prepare for returning multiple codes.
+- Create secret_codes list at the start of the function.
+- Append secret_code to secret_codes instead of returning early.
+- Return secret_codes at the end of the loop.
+
+Step 19: Finalize the multi-poem function.
+- Ensure returns secret_codes (now a list).
+- The commented/uncommented print remains as setup for testing.
+
+The pin_extractor function is now complete and can extract PINs from multiple poems at once, returning a list of PIN strings.
